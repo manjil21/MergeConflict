@@ -95,15 +95,18 @@ void bubblesort(struct sample data[])  //THIS FUCNTION is for bubble
 void insertionsort(struct sample data[])  //THIS FUCNTION SORTS THE BARS by insertion sort 
 {
 	int i,j,temp;
-	for (i=1;i<size;i++)            //OUTER LOOP
+	for (i=0;i<size-1;i++)            //OUTER LOOP
 	{
-		
-		temp=data[i].value;        //assigning the i element integer to temp  
-		
-		for (j=i;j>0 && data[j-1].value>temp;j--)  //INNER LOOP : starting from i and looping till i is 1;
-			data[j].value=data[j-1].value;    //assigning  the previous  value is smaller than current value
-
-		data[j].value=temp;              //assigning temp to the value of jth element of array
+		for (j=0;j<size-1-i;j++)    //INNER LOOP
+		{
+			 if (data[j].value>data[j+1].value)  //if the next array value is smaller than current value
+					{
+					//swapping the values of data[j].value and data[j+1].value  
+						temp=data[j].value;
+						data[j].value=data[j+1].value; 
+						data[j+1].value=temp;
+					}
+		}
 	}
 }
 		
