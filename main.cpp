@@ -94,6 +94,7 @@ void bubblesort(struct sample data[])  //THIS FUCNTION is for bubble
 
 void insertionsort(struct sample data[])  //THIS FUCNTION SORTS THE BARS by insertion sort 
 {
+
 	int i,j,temp,min;
 	
 	for (i=0;i<size-1;i++)            //OUTER LOOP
@@ -109,7 +110,7 @@ void insertionsort(struct sample data[])  //THIS FUCNTION SORTS THE BARS by inse
 		temp=data[i].value;   //swap data[i].value and data{i].value;
 		data[i].value=data[min].value;
 		data[min].value=temp;
-	}
+	
 }
 		
 	
